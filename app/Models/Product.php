@@ -20,4 +20,14 @@ class Product extends Model
       'description',
       'price',
   ];
+
+  public function setReference()
+  {
+     return uniqid();
+  }
+
+  public function imagePrincipal()
+  {
+      return $this->hasOne(Image::class); 
+  }
 }

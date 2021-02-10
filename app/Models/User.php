@@ -43,8 +43,17 @@ class User extends \TCG\Voyager\Models\User
         'email_verified_at' => 'datetime',
     ];
 
+
    public function getFullName()
     {
        return $this->firstname.' '.$this->lastname;
+    }
+
+    public function isAdmin()
+    {
+       if ($this->role_id == 1) {
+          return true;
+       }
+       return false;
     }
 }
