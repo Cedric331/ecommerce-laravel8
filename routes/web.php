@@ -23,6 +23,7 @@ Route::get('/home', function () {
 })->middleware(['auth'])->name('home');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products-index');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products-show');
 
 Route::get('/account', function () {
    return view('account');

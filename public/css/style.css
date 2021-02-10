@@ -11,3 +11,24 @@
  .text-black-40 {
    color: rgba(0, 0, 0, 0.4)
  }
+
+ .carousel{
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+ }
+
+ .imageProduct{
+   max-height: 400px; 
+   max-width: 400px;
+ }
+ .zoom img:hover {
+      transform: scale(2);
+      transition-duration: 1s;
+      margin-bottom: 100px;
+      margin-left: 100px;
+}
+
+.zoom img {
+   transition-duration: 0.5s;
+}

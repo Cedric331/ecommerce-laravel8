@@ -15,14 +15,14 @@
            </div>
 
            <div class="card-body text-center">
-             <a href="" class="grey-text">
+             <a href="{{ route('products-show', ['product' => $product->id]) }}" class="grey-text">
                <h4>{{ $product->name }}</h4>
              </a>
              <h5 class="font-weight-bold blue-text mb-0">
                <strong>{{ $product->price }} €</strong>
              </h5>
            </div>
-           <div class="card-footer d-flex justify-content-center">
+           <div class="my-2 d-flex justify-content-center">
                <button class="btn btn-primary">Ajouter au panier</button>
             </div>
          </div>
