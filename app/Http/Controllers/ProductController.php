@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Product;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -35,9 +39,28 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+         $request->validated();
+
+         $product = new Product;
+         $product->name = $request->name;
+         $product->description = $request->description;
+         $product->price = $request->price;
+         $product->reference = uniqid();
+         $product->save();
+
+         foreach ($request->imageFile as $file) {
+            Storage::putFileAs(
+               'products', $file,  $file->getClientOriginalName()
+           );
+
+            $image = new Image;
+            $image->product_id = $product->id;
+            $image->image = $file->getClientOriginalName();
+            $image->save();
+         }
+         return redirect()->back()->with( 'success','Produit créé avec succès!');
     }
 
     /**
