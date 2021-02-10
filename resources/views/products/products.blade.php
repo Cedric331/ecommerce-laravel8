@@ -10,7 +10,7 @@
        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
          <div class="card align-items-center">
            <div class="view overlay">
-             <img src="{{ asset('storage/products/'.$product->imagePrincipal->image) }}" class="card-img-top"
+             <img src="{{ asset('storage/products/'.$product->image) }}" class="card-img-top"
                alt="{{ $product->name }}">
            </div>
 

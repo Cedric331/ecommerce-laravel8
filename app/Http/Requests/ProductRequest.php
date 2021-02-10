@@ -28,7 +28,8 @@ class ProductRequest extends FormRequest
          'name' => 'required|unique:products|max:255',
          'description' => 'required|max:500',
          'price' => 'required|between:0,99.999',
-         'imageFile' => 'required',
+         'image' => 'required',
+         'image' => 'image|mimes:jpeg,png,jpg|max:2048',
          'imageFile.*' => 'image|mimes:jpeg,png,jpg|max:2048'
      ];
     }
@@ -48,9 +49,11 @@ class ProductRequest extends FormRequest
               'description.required' => 'La description est requise',
               'price.required' => 'Le prix est requis',
               'price.between' => 'Le prix est incorrect',
-              'imageFile.required' => 'Il est obligatoire de mettre au moins une image',
+              'image.required' => 'Il est obligatoire de mettre au moins l\'image principal',
               'imageFile.*.mimes' => 'Le format doit être jpg ou png',
               'imageFile.*.image' => 'Vous devez télécharger une image',
+              'image.mimes' => 'Le format doit être jpg ou png',
+              'image.image' => 'Vous devez télécharger une image',
           ];
       }
 }

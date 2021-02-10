@@ -31,7 +31,7 @@ Route::get('/account', function () {
 require __DIR__.'/auth.php';
 
 
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['admin', 'auth'])->group(function () {
 
    Route::get('/administration', function () {
       return view('admin.index');

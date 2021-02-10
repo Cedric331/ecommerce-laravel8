@@ -18,6 +18,7 @@ class Product extends Model
       'name',
       'reference',
       'description',
+      'image',
       'price',
   ];
 
@@ -26,8 +27,8 @@ class Product extends Model
      return uniqid();
   }
 
-  public function imagePrincipal()
+  public function images()
   {
-      return $this->hasOne(Image::class); 
+      return $this->hasMany(Image::class); 
   }
 }

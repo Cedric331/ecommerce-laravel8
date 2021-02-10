@@ -34,8 +34,12 @@
          <input type="number" step='0.01' class="form-control" value="{{ old('price') }}" id="price" name="price" aria-describedby="Prix du produit">
       </div>
       <div class="mb-3">
-         <label for="image" class="form-label">Images : </label>
-            <input type="file" name="imageFile[]" class="custom-file-input" id="images" multiple="multiple">
+         <label for="image" class="form-label">Image principal : </label>
+         <input type="file" name="image" class="form-control" id="image" required>
+       </div>
+      <div class="mb-3">
+         <label for="images" class="form-label">Images supplémentaires : </label>
+            <input type="file" name="imageFile[]" class="form-control" id="images" multiple="multiple">
          <div class="form-text">Vous pouvez télécharger plusieurs images en même temps avec la touche ctrl.</div>
        </div>
       <button type="submit" class="btn btn-success">Créer</button>

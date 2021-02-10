@@ -20,7 +20,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
 
-        return view('products.products', ['products' => $products]);
+        return view('products.products', compact('products'));
     }
 
     /**
@@ -41,25 +41,28 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
          $request->validated();
 
          $product = new Product;
          $product->name = $request->name;
          $product->description = $request->description;
          $product->price = $request->price;
+         $product->image = $request->image->getClientOriginalName();
          $product->reference = uniqid();
          $product->save();
 
+         $request->image->move(public_path().'/storage/products/', $request->image->getClientOriginalName());
+
          foreach ($request->imageFile as $file) {
-            Storage::putFileAs(
-               'products', $file,  $file->getClientOriginalName()
-           );
+            $file->move(public_path().'/storage/products/', $file->getClientOriginalName()); 
 
             $image = new Image;
             $image->product_id = $product->id;
             $image->image = $file->getClientOriginalName();
             $image->save();
          }
+
          return redirect()->back()->with( 'success','Produit créé avec succès!');
     }
 
