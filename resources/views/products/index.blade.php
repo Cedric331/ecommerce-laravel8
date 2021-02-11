@@ -1,7 +1,6 @@
 <x-app-layout>
 
 <div class="container mt-5">
-
    <section class="dark-grey-text text-center">
      <h3 class="font-weight-bold mb-4 pb-2">Nos Produits</h3>
      <div class="row">
@@ -21,9 +20,7 @@
                <strong>{{ $product->price }} €</strong>
              </h5>
            </div>
-           <div class="my-2 d-flex justify-content-center">
-               <button class="btn btn-primary">Ajouter au panier</button>
-            </div>
+           <cart-add-component product="{{ $product->id }}"></cart-add-component>
          </div>
        </div>
        @endforeach

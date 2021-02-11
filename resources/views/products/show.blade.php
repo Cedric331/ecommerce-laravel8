@@ -57,9 +57,7 @@
               <div class="mt-5">
                 <div class="row mt-3 mb-4">
                   <div class="col-md-12 text-center text-md-left text-md-right">
-                  <button class="btn btn-primary btn-rounded">
-                     Ajouter au panier
-                  </button>
+                     <cart-add-component product="{{ $product->id }}"></cart-add-component>
                   </div>
 
                 </div>

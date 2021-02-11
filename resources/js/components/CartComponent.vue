@@ -13,10 +13,9 @@
        count : 0
     }
   },
-  props: {
-  },
-        mounted() {
-            console.log('Component mounted.')
+  props: ['cart'],
+      mounted() {
+         this.count = this.cart
         }
     }
 </script>
