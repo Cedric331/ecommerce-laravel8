@@ -57,6 +57,11 @@ class User extends \TCG\Voyager\Models\User
        return false;
     }
 
+    public function cart()
+    {
+      return $this->hasMany(Cart::class);
+    }
+
     public function cartCount()
     {
       return $this->hasMany(Cart::class)->count();

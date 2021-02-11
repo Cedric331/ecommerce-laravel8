@@ -19,6 +19,7 @@
         <script src="https://kit.fontawesome.com/cecf7fd386.js" crossorigin="anonymous" defer></script>
       </head>
 <body>
+  
         <div class="bg-gray-100" id="app">
             @include('layouts.navigation')
             <flash-component message=""></flash-component>

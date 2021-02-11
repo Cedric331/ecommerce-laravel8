@@ -15,7 +15,7 @@
       </ul>
        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
          @auth
-         <cart-component cartcount={{ Auth::user()->cartCount() }}></cart-component>
+         <cart-icon-component :countcart="{{ Auth::user()->cartCount() }}"></cart-icon-component>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ Auth::user()->getFullName() }}

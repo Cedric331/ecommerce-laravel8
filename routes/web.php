@@ -36,6 +36,8 @@ Route::middleware(['auth'])->group(function () {
 
    Route::post('/cart/add/{product}', [CartController::class, 'store'])->name('product-add');
 
+   Route::post('/cart/index', [CartController::class, 'index'])->name('product-index');
+
 });
 
 Route::middleware(['admin', 'auth'])->group(function () {
