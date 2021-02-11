@@ -38,7 +38,8 @@
 <style>
     .spacing {
         position: fixed;
+        top: 100px;
         right: 25px;
-        bottom: 25px;
+        z-index: 10;
     }
 </style>

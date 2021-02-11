@@ -13,11 +13,11 @@
             url: 'http://127.0.0.1:8000/cart/add/'+this.product,
          })
          .then(function (response) {
-            flash('Post Created Successfully', 'success');
+            console.log(response.data);
+            flash('Produit ajouté au panier', 'success');
          })
          .catch(function (erreur) {
-             //On traite ici les erreurs éventuellement survenues
-             console.log(erreur);
+            
          });
       }
   },

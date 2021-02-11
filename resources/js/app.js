@@ -16,6 +16,7 @@ window.flash = function(message) {
    window.events.$emit('flash',message);
 }
 
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -41,3 +42,5 @@ Vue.component('flash-component', require('./components/FlashComponent.vue').defa
 const app = new Vue({
     el: '#app',
 });
+
+

@@ -16,6 +16,6 @@ class CartController extends Controller
       $cart->product_id = $product->id;
       $cart->save();
 
-      return back()->with('success','Produit ajouté dans le panier!');
+      return response()->json($cart, 200);
     }
 }

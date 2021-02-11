@@ -21,10 +21,9 @@
 <body>
         <div class="bg-gray-100" id="app">
             @include('layouts.navigation')
-
+            <flash-component message=""></flash-component>
             <!-- Page Content -->
             <main>
-               <flash-component message=""></flash-component>
                 {{ $slot }}
             </main>
         </div>

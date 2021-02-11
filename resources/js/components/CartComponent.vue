@@ -10,12 +10,12 @@
     export default {
   data () {
     return {
-       count : 0
+       count : 0,
     }
   },
-  props: ['cart'],
+  props: ['cartcount'],
       mounted() {
-         this.count = this.cart
+         this.count = this.cartcount
         }
     }
 </script>
