@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
    <div class="container-fluid">
       <a class="navbar-brand" href="{{ route('home') }}">
-         <x-application-logo class="block h-10 w-auto fill-current text-white" />
+         {{ __('Accueil') }}
       </a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
@@ -10,17 +10,12 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="{{ route('home') }}">{{ __('Accueil') }}</a>
-         </li>
-         <li class="nav-item">
             <a class="nav-link text-white" aria-current="page" href="{{ route('products-index') }}">{{ __('Produits') }}</a>
          </li>
       </ul>
        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
          @auth
-         <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="{{ route('products-index') }}" style="font-size: 20px;"><i class="fas fa-shopping-cart"></i></a>
-         </li>
+         <cart-component></cart-component>
          <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ Auth::user()->getFullName() }}

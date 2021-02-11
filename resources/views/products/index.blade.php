@@ -5,7 +5,6 @@
    <section class="dark-grey-text text-center">
      <h3 class="font-weight-bold mb-4 pb-2">Nos Produits</h3>
      <div class="row">
-
       @foreach ($products as $product )
        <div class="col-lg-3 col-md-6 mb-4 d-flex align-items-stretch">
          <div class="card align-items-center">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -31,6 +32,11 @@ Route::get('/account', function () {
 
 require __DIR__.'/auth.php';
 
+Route::middleware(['auth'])->group(function () {
+
+   Route::post('/cart/add/{product}', [CartController::class, 'store'])->name('product-add');
+
+});
 
 Route::middleware(['admin', 'auth'])->group(function () {
 
