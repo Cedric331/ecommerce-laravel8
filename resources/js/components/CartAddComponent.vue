@@ -13,8 +13,8 @@
             url: 'http://127.0.0.1:8000/cart/add/'+this.product,
          })
          .then(function (response) {
-            console.log(response.data);
-            flash('Produit ajouté au panier', 'success');
+            console.log(response.data.name);
+            flash('Le produit '+ response.data.name + ' est ajouté au panier', 'success');
          })
          .catch(function (erreur) {
             

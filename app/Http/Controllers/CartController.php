@@ -16,6 +16,6 @@ class CartController extends Controller
       $cart->product_id = $product->id;
       $cart->save();
 
-      return response()->json($cart, 200);
+      return response()->json($product, 200);
     }
 }
