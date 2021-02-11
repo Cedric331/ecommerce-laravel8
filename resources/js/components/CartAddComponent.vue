@@ -12,8 +12,8 @@
             method: 'post',
             url: 'http://127.0.0.1:8000/cart/add/'+this.product,
          })
-         .then(function (reponse) {
-
+         .then(function (response) {
+            flash('Post Created Successfully', 'success');
          })
          .catch(function (erreur) {
              //On traite ici les erreurs éventuellement survenues

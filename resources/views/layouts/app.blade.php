@@ -24,6 +24,7 @@
 
             <!-- Page Content -->
             <main>
+               <flash-component message=""></flash-component>
                 {{ $slot }}
             </main>
         </div>
